@@ -14,7 +14,7 @@ public class ServerPortCustomizer implements WebServerFactoryCustomizer<Configur
     @Override
     public void customize(ConfigurableWebServerFactory factory) {
         String env_port = System.getenv("SAMPLE_APP_PORT");
-        if (env_port != null) {
+        if (env_port != null && env_port.length() > 0) {
             factory.setPort(Integer.valueOf(env_port));
             LOGGER.info("starting program on port: {}", env_port);
         }
