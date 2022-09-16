@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: docker-sample-1
+  namespace: test
+  labels:
+    app: docker-sample
+    version: v1
+spec:
+  containers:
+    - name: web
+      image: docker-sample:0.0.1
+      ports:
+        - name: web
+          containerPort: 80
+          protocol: TCP
